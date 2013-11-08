@@ -18,6 +18,7 @@ namespace CA1.Controllers
             //ViewBag.Title = "List of Orders";
             //var q = from o in db.Orders
             //        select o;
+            //new
             //return View(q);
 
             if (sortBy == "size")
