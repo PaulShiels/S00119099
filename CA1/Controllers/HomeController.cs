@@ -12,7 +12,7 @@ namespace CA1.Controllers
         MusicDBDataContext db = new MusicDBDataContext();
         //
         // GET: /Home/
-
+        [AllowAnonymous]
         public ActionResult Index(string searchTerm, string sortBy)
         {
             //ViewBag.Title = "List of Orders";
@@ -20,7 +20,7 @@ namespace CA1.Controllers
             //        select o;
             //new
             //return View(q);
-
+           
             if (sortBy == "size")
             {
                 var size = db.Orders
@@ -43,13 +43,6 @@ namespace CA1.Controllers
                 return View(allOrders);
             }
 
-        }
-
-        public ActionResult Albums()
-        {
-            var q = from a in db.Albums
-                    select a;
-            return View(q);
         }
 
 

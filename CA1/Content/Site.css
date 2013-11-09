@@ -60,6 +60,6 @@ textarea {
     display: none;
 }
 
-#orderListItems {
+.orderListItems {
     font-size:12px;
 }

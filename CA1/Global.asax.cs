@@ -19,9 +19,10 @@ namespace CA1
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
+            GlobalConfiguration.Configuration.Filters.Add(new System.Web.Http.AuthorizeAttribute());
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);            
         }
     }
 }

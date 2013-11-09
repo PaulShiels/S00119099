@@ -12,11 +12,20 @@ namespace CA1.Controllers
         MusicDBDataContext db = new MusicDBDataContext();
         // GET: /Album/
 
-        public ActionResult Index()
+        [AllowAnonymous]
+        public ActionResult Index(int id=0)
         {
-            return View();
+            var q = from a in db.Albums
+                    select a;
+            return View(q);
+        }
+        public ActionResult Albums(int id=0)
+        {
+            return View(db.Albums);
+
         }
 
+        [AllowAnonymous]
         public ActionResult Album(int id, string btnBack)
         {
             if (btnBack == "Back")
@@ -25,11 +34,19 @@ namespace CA1.Controllers
             }
             else
             {
-                var q = from a in db.Albums
-                        join o in db.OrderDetails on a.AlbumId equals o.AlbumId
-                        where o.OrderId == id
-                        select a;
-                return View(q);
+                if (id == 0)
+                {
+                    return View((db.Albums).OrderBy(a => a.ArtistId));
+                }
+                else
+                {
+                    var q = from a in db.Albums
+                            join o in db.OrderDetails on a.AlbumId equals o.AlbumId
+                            where o.OrderId == id
+                            select a;
+                    return View(q);
+                }
+                                
             }
 
             
