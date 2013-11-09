@@ -17,13 +17,22 @@ namespace CA1.Controllers
             return View();
         }
 
-        public ActionResult Album(int id)
+        public ActionResult Album(int id, string btnBack)
         {
-            var q = from a in db.Albums
-                    join o in db.OrderDetails on a.AlbumId equals o.AlbumId
-                    where o.OrderId == id
-                    select a;
-            return View(q);
+            if (btnBack == "Back")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                var q = from a in db.Albums
+                        join o in db.OrderDetails on a.AlbumId equals o.AlbumId
+                        where o.OrderId == id
+                        select a;
+                return View(q);
+            }
+
+            
         }
 
         //

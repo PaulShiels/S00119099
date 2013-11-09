@@ -3,58 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 
 namespace CA1.Controllers
 {
-    public class HomeController : Controller
+    public class PartialModel2 : Controller
     {
-        MusicDBDataContext db = new MusicDBDataContext();
         //
-        // GET: /Home/
+        // GET: /PartialModel2/
 
-        public ActionResult Index(string searchTerm, string sortBy)
+        public ActionResult Index()
         {
-            //ViewBag.Title = "List of Orders";
-            //var q = from o in db.Orders
-            //        select o;
-            //new
-            //return View(q);
-
-            if (sortBy == "size")
-            {
-                var size = db.Orders
-                    .OrderByDescending(o => o.Total);
-                           //join od in db.OrderDetails on o.OrderId equals od.OrderId
-                           //select o;
-                return View(size);
-            }
-             else if(sortBy == "date")
-            {
-                var sortbydate = db.Orders
-                    .OrderBy(o => o.OrderDate);
-                return View(sortbydate);
-            }
-            else
-            {
-                var allOrders = db.Orders
-                    .Where(ord => searchTerm == null || ord.FirstName.Contains(searchTerm))
-                    .OrderBy(a => a.FirstName);
-                return View(allOrders);
-            }
-
+            return View();
         }
 
-        public ActionResult Albums()
-        {
-            var q = from a in db.Albums
-                    select a;
-            return View(q);
-        }
-
-
         //
-        // GET: /Home/Details/5
+        // GET: /PartialModel2/Details/5
 
         public ActionResult Details(int id)
         {
@@ -62,7 +25,7 @@ namespace CA1.Controllers
         }
 
         //
-        // GET: /Home/Create
+        // GET: /PartialModel2/Create
 
         public ActionResult Create()
         {
@@ -70,7 +33,7 @@ namespace CA1.Controllers
         }
 
         //
-        // POST: /Home/Create
+        // POST: /PartialModel2/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -88,7 +51,7 @@ namespace CA1.Controllers
         }
 
         //
-        // GET: /Home/Edit/5
+        // GET: /PartialModel2/Edit/5
 
         public ActionResult Edit(int id)
         {
@@ -96,7 +59,7 @@ namespace CA1.Controllers
         }
 
         //
-        // POST: /Home/Edit/5
+        // POST: /PartialModel2/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -114,7 +77,7 @@ namespace CA1.Controllers
         }
 
         //
-        // GET: /Home/Delete/5
+        // GET: /PartialModel2/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -122,7 +85,7 @@ namespace CA1.Controllers
         }
 
         //
-        // POST: /Home/Delete/5
+        // POST: /PartialModel2/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
