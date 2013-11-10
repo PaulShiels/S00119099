@@ -48,4 +48,12 @@
       <Association Name="Artist_Album" Member="Albums" ThisKey="ArtistId" OtherKey="ArtistId" Type="Album" />
     </Type>
   </Table>
+  <Table Name="dbo.StoreUsers" Member="StoreUsers">
+    <Type Name="StoreUser">
+      <Column Name="User_Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Email_Address" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

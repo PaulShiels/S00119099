@@ -1,0 +1,31 @@
+﻿@model CA1.Models.UserModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Create user faild, check your fields");
+    <div>
+        <fieldset>
+            <legend>Login Form</legend>
+            
+            <div>@Html.LabelFor(u => u.Email)</div>
+            <div>
+                @Html.TextBoxFor(u=>u.Email)
+                @Html.ValidationMessageFor(u=>u.Email)
+            </div>
+
+            <div>@Html.LabelFor(u => u.Password)</div>
+            <div>
+                @Html.PasswordFor(u=>u.Password)
+                @Html.ValidationMessageFor(u=>u.Password)
+            </div>
+            <input type="submit" value="Create User" />
+        </fieldset>
+    </div>
+}
