@@ -1,14 +1,14 @@
 Music Store App
 =============================================
-
-![Alt text](img1.png)
 Home page displays a list of **Orders** for Albums
-
-![Alt text](img2.png)
-Search displays **Orders** of the customer by searching for **First Name**
-
 ![Alt text](img1.png)
+
+Search displays **Orders** of the customer by searching for **First Name**
+![Alt text](img2.png)
+
 Sort by sorts the order either by date or by size (value)
+![Alt text](img1.png)
+
 
 The **Albums** button displays all the albums that that customer has ordered.
 The **Back** button returns to homepage.
@@ -24,4 +24,5 @@ The **Edit**, **Details** and **Delete** when clicked check if a use is logged i
 If a user is logged in the the page is redirected to the appropiate page, in this case a page with the message "This page is under development"   
 Also the user will be redirected to the homepage in 5 seconds.
 
-![Alt text](img2.png)
+![Alt text](img4.png)
+![Alt text](img5.png)
