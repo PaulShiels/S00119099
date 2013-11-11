@@ -25,3 +25,4 @@ If a user is logged in the the page is redirected to the appropiate page, in thi
 Also the user will be redirected to the homepage in 5 seconds.
 
 ![Alt text](img4.png)
+![Alt text](img5.png)
