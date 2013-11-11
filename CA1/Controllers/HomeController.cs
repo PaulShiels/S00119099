@@ -79,6 +79,7 @@ namespace CA1.Controllers
         //
         // POST: /Home/Edit/5
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -110,6 +111,7 @@ namespace CA1.Controllers
         //
         // POST: /Home/Delete/5
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

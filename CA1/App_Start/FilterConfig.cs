@@ -9,6 +9,8 @@ namespace CA1
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new System.Web.Mvc.AuthorizeAttribute());
+            //filters.Add(new AntiForgeryTokenFilterProvider());
+            //filters.Add(new AntiForgeryTokenFilterProvider());
             //filters.Add(new RequireHttpsAttribute());
         }
     }
