@@ -19,6 +19,7 @@ namespace CA1.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult LogIn()
         {
@@ -31,6 +32,7 @@ namespace CA1.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult LogIn(Models.UserModel user)
         {
@@ -49,12 +51,14 @@ namespace CA1.Controllers
             return View(user);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Registration()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Registration(Models.UserModel user)
         {

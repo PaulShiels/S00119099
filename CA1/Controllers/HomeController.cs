@@ -48,87 +48,78 @@ namespace CA1.Controllers
 
         //
         // GET: /Home/Details/5
-
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
-            return View();
-        }
-
-        //
-        // GET: /Home/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Home/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            if (!User.Identity.IsAuthenticated)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("LogIn", "User");
             }
-            catch
+            else
             {
-                return View();
+                return View("UnderDev");
             }
         }
 
         //
         // GET: /Home/Edit/5
-
+        [AllowAnonymous]
         public ActionResult Edit(int id)
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("LogIn", "User");
+            }
+            else
+            {
+                return View("UnderDev");                
+            }
         }
 
         //
         // POST: /Home/Edit/5
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            if (!User.Identity.IsAuthenticated)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("LogIn", "User");
             }
-            catch
+            else
             {
-                return View();
+                return View("UnderDev");
             }
         }
 
         //
         // GET: /Home/Delete/5
-
+        [AllowAnonymous]
         public ActionResult Delete(int id)
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("LogIn", "User");
+            }
+            else
+            {
+                return View("UnderDev");
+            }
         }
 
         //
         // POST: /Home/Delete/5
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if (!User.Identity.IsAuthenticated)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("LogIn", "User");
             }
-            catch
+            else
             {
-                return View();
+                return View("UnderDev");
             }
         }
     }

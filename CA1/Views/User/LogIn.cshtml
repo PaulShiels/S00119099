@@ -4,14 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true, "Lgin Failed, Please check your Login Details");
     <div>
         <fieldset>
-            <legend>Login Form</legend>
+            <legend>Please Log In</legend>
             
             <div>@Html.LabelFor(u => u.Email)</div>
             <div>

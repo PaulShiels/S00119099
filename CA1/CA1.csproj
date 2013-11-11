@@ -138,7 +138,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PartialModel2.cs" />
+    <Compile Include="Controllers\UnderDevController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -261,6 +261,7 @@
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\LogOut.cshtml" />
+    <Content Include="Views\Shared\UnderDev.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

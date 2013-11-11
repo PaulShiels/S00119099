@@ -54,87 +54,109 @@ namespace CA1.Controllers
 
         //
         // GET: /Album/Details/5
-
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("LogIn", "User");
+            }
+            else
+            {
+                return View("UnderDev");
+            }
         }
 
         //
         // GET: /Album/Create
-
+        [AllowAnonymous]
         public ActionResult Create()
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("LogIn", "User");
+            }
+            else
+            {
+                return View("UnderDev");
+            }
         }
 
         //
         // POST: /Album/Create
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
+            if (!User.Identity.IsAuthenticated)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("LogIn", "User");
             }
-            catch
+            else
             {
-                return View();
+                return View("UnderDev");
             }
         }
 
         //
         // GET: /Album/Edit/5
-
+        [AllowAnonymous]
         public ActionResult Edit(int id)
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("LogIn", "User");
+            }
+            else
+            {
+                return View("UnderDev");
+            }
         }
 
         //
         // POST: /Album/Edit/5
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            if (!User.Identity.IsAuthenticated)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("LogIn", "User");
             }
-            catch
+            else
             {
-                return View();
+                return View("UnderDev");
             }
         }
 
         //
         // GET: /Album/Delete/5
-
+        [AllowAnonymous]
         public ActionResult Delete(int id)
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("LogIn", "User");
+            }
+            else
+            {
+                return View("UnderDev");
+            }
         }
 
         //
         // POST: /Album/Delete/5
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if (!User.Identity.IsAuthenticated)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("LogIn", "User");
             }
-            catch
+            else
             {
-                return View();
+                return View("UnderDev");
             }
         }
     }
