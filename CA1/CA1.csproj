@@ -150,6 +150,7 @@
       <DependentUpon>MusicDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\SearchParamSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MvcMusicStore.mdf" />

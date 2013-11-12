@@ -26,3 +26,8 @@ Also the user will be redirected to the homepage in 5 seconds.
 
 ![Alt text](img4.png)
 ![Alt text](img5.png)
+
+**Problems to fix**   
+When the search for name is entered and a sort by is also done this retruns the orders for that person sorted correctly but does not enter the name back into the textbox.   
+Tryed to get value for textbox in the index view from the SetParamSet class but that did not work.
+Query string is still hackable!

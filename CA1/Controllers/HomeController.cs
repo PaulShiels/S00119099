@@ -14,26 +14,30 @@ namespace CA1.Controllers
         // GET: /Home/
         [AllowAnonymous]
         public ActionResult Index(string searchTerm, string sortBy)
-        {
-            //ViewBag.Title = "List of Orders";
-            //var q = from o in db.Orders
-            //        select o;
-            //new
-            //return View(q);
-           
+        {           
             if (sortBy == "size")
             {
-                var size = db.Orders
+                searchTerm = Request.QueryString["searchTerm"];
+                var size = new SearchParamSet();
+                size.query = db.Orders
+                    .Where(ord => searchTerm == null || ord.FirstName.Contains(searchTerm))
                     .OrderByDescending(o => o.Total);
-                           //join od in db.OrderDetails on o.OrderId equals od.OrderId
-                           //select o;
-                return View(size);
+                size.searchTerm = searchTerm;
+                size.sortBy = sortBy;
+                return View(size.query);
+
+
             }
              else if(sortBy == "date")
             {
-                var sortbydate = db.Orders
+                searchTerm = Request.QueryString["searchTerm"];
+                var sortbydate = new SearchParamSet();
+                sortbydate.query = db.Orders
+                    .Where(ord => searchTerm == null || ord.FirstName.Contains(searchTerm))
                     .OrderBy(o => o.OrderDate);
-                return View(sortbydate);
+                sortbydate.searchTerm = searchTerm;
+                sortbydate.sortBy = sortBy;
+                return View(sortbydate.query);
             }
             else
             {
